@@ -15,6 +15,7 @@ const PizzaList = () => {
         <PizzaCard />
         <PizzaCard />
         <PizzaCard />
+        <PizzaCard />
       </div>
     </div>
   )

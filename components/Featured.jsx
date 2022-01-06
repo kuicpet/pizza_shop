@@ -29,7 +29,7 @@ const Featured = () => {
       </div>
       <div
         className={styles.wrapper}
-        style={{ transform: `translateX(${-100 * index})vw` }}
+        style={{ transform: `translateX(${-100*index}vw)` }}
       >
         {images.map((img, index) => (
           <div className={styles.imgContainer} key={index}>
