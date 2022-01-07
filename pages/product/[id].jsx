@@ -6,7 +6,7 @@ const Product = () => {
   const [size, setSize] = useState(0)
   const pizza = {
     id: 1,
-    img: '/img/bbqChicken.png',
+    img: '/img/pizza.png',
     name: 'CAMPAGOLIA',
     price: [19.9, 23.4, 27.9],
     desc: 'Lorem impsum dolor sit amet, consecter adipicsing elit.',
