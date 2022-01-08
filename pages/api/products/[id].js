@@ -1,4 +1,4 @@
-import dbConnect from '../../../utils/db'
+import dbConnect from '../../../utils/connectDb'
 import Product from '../../../models/Product'
 
 export default async function handler(req, res) {
@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     method,
     query: { id },
   } = req
-  dbConnect()
+  dbConnect.connect()
   if (method === 'GET') {
     try {
       const product = await Product.findById(id)
