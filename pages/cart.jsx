@@ -40,6 +40,7 @@ const Cart = () => {
             </tr>
           </thead>
           <tbody>
+            {cart.products.length === 0 && <p>Cart is Empty</p>}
             {cart.products.map((product) => (
               <tr className={styles.tr} key={product._id}>
                 <td>
