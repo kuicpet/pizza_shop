@@ -26,7 +26,9 @@ const Navbar = () => {
           <Image src='/img/logo.png' alt='logo' width='160px' height='69px' />
           <li className={styles.listItem}>Events</li>
           <li className={styles.listItem}>Blog</li>
-          <li className={styles.listItem}>Contact</li>
+          <Link href='/admin/login' passHref>
+            <li className={styles.listItem}>Login</li>
+          </Link>
         </ul>
       </div>
       <Link href='/cart' passHref>

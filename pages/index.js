@@ -27,12 +27,12 @@ export default function Home({ pizzaList, admin }) {
 }
 
 export const getServerSideProps = async (ctx) => {
+  db.connect()
   const myCookie = ctx.req?.cookies || ''
   let admin = false
-  if (myCookie.token !== process.env.TOKEN) {
+  if (myCookie.token === process.env.TOKEN) {
     admin = true
   }
-  db.connect()
   const res = await axios.get('http://localhost:3000/api/products')
   return {
     props: {
