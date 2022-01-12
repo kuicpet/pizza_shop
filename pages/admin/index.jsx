@@ -9,7 +9,7 @@ const Index = ({ orders, products }) => {
   const status = ['preparing', 'on the Way', 'delivered']
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:3000/api/products/${id}`)
+      await axios.delete(`/api/products/${id}`)
       setPizzaList(pizzaList.filter((pizza) => pizza._id !== id))
     } catch (error) {
       console.log(error)
@@ -19,7 +19,7 @@ const Index = ({ orders, products }) => {
     const item = orderList.filter((order) => order._id === id)[0]
     const currentStatus = item.status
     try {
-      const res = await axios.put(`http://localhost:3000/api/orders/${id}`, {
+      const res = await axios.put(`/api/orders/${id}`, {
         status: currentStatus + 1,
       })
       setOrderList([res.data, ...orderList.filter((order) => order._id !== id)])
@@ -113,12 +113,12 @@ const Index = ({ orders, products }) => {
 
 export const getServerSideProps = async (ctx) => {
   const myCookie = ctx.req?.cookies || ''
-  if(myCookie.token !== process.env.TOKEN){
+  if (myCookie.token !== process.env.TOKEN) {
     return {
       redirect: {
         destination: '/admin/login',
-        permanent: false
-      }
+        permanent: false,
+      },
     }
   }
   const productRes = await axios.get('http://localhost:3000/api/products')

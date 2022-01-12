@@ -9,9 +9,9 @@ const PizzaCard = ({ pizza }) => {
         <Image
           src={pizza.img}
           alt=''
-          width='500'
-          height='500'
-          objectFit='contain'
+          width='500px'
+          height='500px'
+          objectFit='cover'
         />
       </Link>
       <h1 className={styles.title}>{pizza.title}</h1>
