@@ -17,6 +17,11 @@
   width: 100%;
   border-spacing: 20px;
   text-align: left;
+  border: 1px solid black;
+  margin: 1px;
+}
+.thead {
+  border: 1px solid black;
 }
 .name {
   font-weight: 500;
@@ -48,6 +53,7 @@
   cursor: pointer;
   margin-top: 20px;
 }
+
 @media screen and (max-width: 480px) {
   .container {
     flex-direction: column;

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 import styles from '../../styles/Product.module.css'
 import axios from 'axios'
@@ -11,6 +12,7 @@ const Product = ({ pizza }) => {
   const [extras, setExtras] = useState([])
   const [qty, setQty] = useState(1)
   const dispatch = useDispatch()
+  const router = useRouter()
 
   const changePrice = (number) => {
     setPrice(price + number)
@@ -32,7 +34,7 @@ const Product = ({ pizza }) => {
   }
 
   const handleClick = () => {
-    dispatch(addProduct({...pizza, extras, price, qty}))
+    dispatch(addProduct({ ...pizza, extras, price, qty }))
   }
 
   return (
@@ -100,7 +102,9 @@ const Product = ({ pizza }) => {
             defaultValue={1}
             className={styles.qty}
           />
-          <button className={styles.button} onClick={handleClick}>Add to Cart</button>
+          <button className={styles.button} onClick={handleClick}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>

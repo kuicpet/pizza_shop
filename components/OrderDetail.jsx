@@ -35,6 +35,9 @@ const OrderDetail = ({ total, createOrder }) => {
         <button className={styles.button} onClick={handleClick}>
           Place Order
         </button>
+        <button className='' onClick={handleClick}>
+          Cancel Order
+        </button>
       </div>
     </div>
   )

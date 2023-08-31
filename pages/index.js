@@ -10,6 +10,7 @@ import db from '../utils/connectDb'
 
 export default function Home({ pizzaList, admin }) {
   const [close, setClose] = useState(true)
+  // console.log(pizzaList)
   return (
     <div className={styles.container}>
       <Head>
@@ -36,7 +37,7 @@ export const getServerSideProps = async (ctx) => {
   const res = await axios.get('http://localhost:3000/api/products')
   return {
     props: {
-      pizzaList: res.data,
+      pizzaList: res?.data,
       admin,
     },
   }

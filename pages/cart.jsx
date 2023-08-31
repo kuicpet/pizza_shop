@@ -29,7 +29,7 @@ const Cart = () => {
     <div className={styles.container}>
       <div className={styles.left}>
         <table className={styles.table}>
-          <thead>
+          <thead className={styles.thead}>
             <tr className={styles.trTitle}>
               <th>Product</th>
               <th>Name</th>
